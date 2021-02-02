@@ -274,7 +274,7 @@ class Summarizer(pl.LightningModule):
         parser.add_argument("--test", action='store_true', help="Test only, no training")
         parser.add_argument("--model_path", type=str, default='facebook/bart-base',
                             help="Path to the checkpoint directory or model name")
-        parser.add_argument("--tokenizer", type=str, default='facebook/bart-base')
+        parser.add_argument("--tokenizer", type=str, default='facebook/bart-large')
         parser.add_argument("--no_progress_bar", action='store_true', help="no progress bar. Good for printing")
         parser.add_argument("--fp32", action='store_true', help="default is fp16. Use --fp32 to switch to fp32")
         parser.add_argument("--debug", action='store_true', help="debug run")
