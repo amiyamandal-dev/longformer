@@ -228,17 +228,14 @@ class Summarizer(pl.LightningModule):
                           num_workers=self.args.num_workers, sampler=sampler,
                           collate_fn=SummarizationDataset.collate_fn)
 
-    @pl.data_loader
     def train_dataloader(self):
         self.train_dataloader_object = self._get_dataloader(self.train_dataloader_object, 'train', is_train=True)
         return self.train_dataloader_object
 
-    @pl.data_loader
     def val_dataloader(self):
         self.val_dataloader_object = self._get_dataloader(self.val_dataloader_object, 'validation', is_train=False)
         return self.val_dataloader_object
 
-    @pl.data_loader
     def test_dataloader(self):
         self.test_dataloader_object = self._get_dataloader(self.test_dataloader_object, 'test', is_train=False)
         return self.test_dataloader_object
